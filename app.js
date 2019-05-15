@@ -56,6 +56,11 @@ document.querySelector('#book-form').addEventListener('submit', function(e) {
   const ui = new UI();
   // Validate
   if(title === '' || author === '' || isbn === '') {
+    const container = document.querySelector('.container');
+    const errDiv = document.querySelector('.error');
+    if(container.contains(errDiv)){
+      return false;
+    }
     ui.showAlert('Please fill in all fields', 'error');
   } else {
     ui.addBookToList(book);
