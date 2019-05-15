@@ -93,11 +93,6 @@ document.querySelector("#book-form").addEventListener("submit", function(e) {
   // Validate
   if (title === "" || author === "" || isbn === "") {
     ui.showAlert("Please fill in all fields", "error");
-    const container = document.querySelector('.container');
-    const errDiv = document.querySelector('.error');
-    if(container.contains(errDiv)){
-      return false;
-    }
   } else {
     ui.addBookToList(book);
     // Add to LS
@@ -109,6 +104,7 @@ document.querySelector("#book-form").addEventListener("submit", function(e) {
 
   e.preventDefault();
 });
+  
 
 document.querySelector("#book-list").addEventListener("click", function(e) {
   const ui = new UI();
